@@ -15,3 +15,16 @@ const readLine = readline.createInterface ({
 
 //Initial message
 console.log('Welcome! Enter your text (type "exit" to quit):');
+
+// Readline input event handler
+readLine.on('line', (input) => {
+  if (input.toLowerCase() === 'exit') {
+    console.log('Goodbye! Thanks for using this program.');
+    readLine.close();
+    return;
+  }
+  writeStream.write(input + '\n');
+  console.log('Text added to file. Continue typing:');
+});
+
+
