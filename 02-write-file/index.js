@@ -9,6 +9,9 @@ const writeStream = fs.createWriteStream(filePath, { flags: 'a' });
 
 // Readline setup
 const readLine = readline.createInterface ({
-    input: process.stdin,
-    output: process.stdout
+  input: process.stdin,
+  output: process.stdout
 });
+
+//Initial message
+console.log('Welcome! Enter your text (type "exit" to quit):');
