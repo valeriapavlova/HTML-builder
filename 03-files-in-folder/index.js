@@ -18,7 +18,7 @@ async function displayFileInfo() {
         const fileName = path.parse(file.name).name;
         const fileExt = path.extname(file.name).slice(1);
         //Get file size in KB
-        const fileSizeKB = (stats.size / 1024).toFixed(2);
+        const fileSizeKB = (stats.size / 1024).toFixed(3);
 
         //Display file information
         console.log(`${fileName} - ${fileExt} - ${fileSizeKB}KB`);
