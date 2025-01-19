@@ -33,3 +33,9 @@ readLine.on('close', () => {
   process.exit();
 });
 
+// Process exit event handler
+process.on('SIGINT', () => {
+  console.log('\nGoodbye! Thanks for using this program.');
+  writeStream.end();
+  process.exit(0);
+});
