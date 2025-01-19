@@ -27,4 +27,9 @@ readLine.on('line', (input) => {
   console.log('Text added to file. Continue typing:');
 });
 
+// Readline close event handler
+readLine.on('close', () => {
+  writeStream.end();
+  process.exit();
+});
 
