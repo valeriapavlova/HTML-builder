@@ -15,8 +15,8 @@ async function displayFileInfo() {
         //Get file stats
         const stats = await fs.stat(filePath);
         //Extract file name and extension
-        const fileName = path.parse(filePath.name).name;
-        const fileExt = path.extname(filePath.name).slice(1);
+        const fileName = path.parse(file.name).name;
+        const fileExt = path.extname(file.name).slice(1);
         //Get file size in KB
         const fileSizeKB = (stats.size / 1024).toFixed(2);
 
