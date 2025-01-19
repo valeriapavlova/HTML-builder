@@ -7,3 +7,8 @@ const readline = require('readline');
 const filePath = path.join(__dirname, 'text.txt');
 const writeStream = fs.createWriteStream(filePath, { flags: 'a' });
 
+// Readline setup
+const readLine = readline.createInterface ({
+    input: process.stdin,
+    output: process.stdout
+});
