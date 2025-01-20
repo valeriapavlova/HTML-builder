@@ -20,7 +20,7 @@ async function buildCssBundle() {
     const cssContents = [];
 
     //Read the content of each css file
-    for (const cssFile of cssFiles) {
+    for (const cssFile of filesInStylesFolder) {
       const filePath = path.join(stylesFolder, cssFile);
 
       // Check if it's a file
