@@ -12,6 +12,12 @@ async function copyDir() {
     //read source directory contents
     const files = await fs.readdir(sourceDir);
 
+    //copy files to target directory
+    for (const file of files) {
+      const sourcePath = path.join(sourceDir, file);
+      const targetPath = path.join(targetDir, file);
+      
+
     
 
   } catch (error) {
