@@ -82,7 +82,10 @@ async function buildCssBundle() {
     for (const cssFile of filesInStylesFolder) {
       const filePath = path.join(stylesFolder, cssFile);
       const fileStats = await fs.stat(filePath);
-      if (fileStats.isFile() && cssFile.endsWith('.css')) {
+      if (
+        fileStats.isFile() &&
+        path.extname(cssFile).toLowerCase() === '.css'
+      ) {
         const fileContent = await fs.readFile(filePath, 'utf-8');
         cssContents.push(fileContent);
       }
