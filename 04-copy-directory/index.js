@@ -16,6 +16,13 @@ async function copyDir() {
     for (const file of files) {
       const sourcePath = path.join(sourceDir, file);
       const targetPath = path.join(targetDir, file);
+
+      //check if file is a file
+      const stats = await fs.stat(sourcePath);
+      if (stats.isFile()) {
+        await fs.copyFile(sourcePath, targetPath);
+      }
+    }
       
 
     
