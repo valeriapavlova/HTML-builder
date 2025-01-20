@@ -8,6 +8,12 @@ async function buildPage() {
     await fs.mkdir(path.join(__dirname, '../project-dist'), { 
       recursive: true,
     });
+
+    // read template.html
+    let template = await fs.readFile(
+      path.join(__dirname, 'template.html'),
+      'utf-8',
+    );
   } catch (error) {
     console.error('Error copying directory:', error);
   }
