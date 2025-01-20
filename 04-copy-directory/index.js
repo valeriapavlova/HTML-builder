@@ -9,6 +9,10 @@ async function copyDir() {
     //create target directory
     await fs.mkdir(targetDir, { recursive: true });
 
+    //read source directory contents
+    const files = await fs.readdir(sourceDir);
+
+    
 
   } catch (error) {
     console.error('Error copying directory:', error);
