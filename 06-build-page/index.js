@@ -22,7 +22,7 @@ async function copyDir(src, dest) {
 async function buildPage() {
   try {
     //create project-dist folder
-    await fs.mkdir(path.join(__dirname, '../project-dist'), {
+    await fs.mkdir(path.join(__dirname, 'project-dist'), {
       recursive: true,
     });
 
@@ -50,7 +50,7 @@ async function buildPage() {
 
     //save new index.html
     await fs.writeFile(
-      path.join(__dirname, '../project-dist/index.html'),
+      path.join(__dirname, 'project-dist/index.html'),
       template,
     );
 
@@ -60,7 +60,7 @@ async function buildPage() {
     // copy assets folder from 04-copy-assets
     await copyDir(
       path.join(__dirname, 'assets'),
-      path.join(__dirname, '../project-dist/assets'),
+      path.join(__dirname, 'project-dist/assets'),
     );
 
     console.log('Page build successfully!');
@@ -72,7 +72,7 @@ async function buildPage() {
 // function from 05-merge-style
 async function buildCssBundle() {
   const stylesFolder = path.join(__dirname, 'styles');
-  const outputFolder = path.join(__dirname, '../project-dist');
+  const outputFolder = path.join(__dirname, 'project-dist');
   const outputFile = path.join(outputFolder, 'style.css');
 
   try {
