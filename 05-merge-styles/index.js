@@ -23,9 +23,12 @@ async function buildCssBundle() {
     for (const cssFile of filesInStylesFolder) {
       const filePath = path.join(stylesFolder, cssFile);
 
-      // Check if it's a file
+      // Check if it's a file and has .css extension
       const fileStats = await fs.stat(filePath);
-      if (fileStats.isFile()) {
+      if (
+        fileStats.isFile() &&
+        path.extname(cssFile).toLowerCase() === '.css'
+      ) {
         //Read the file content and add to array
         const fileContent = await fs.readFile(filePath, 'utf-8');
         cssContents.push(fileContent);
