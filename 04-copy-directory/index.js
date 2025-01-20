@@ -6,6 +6,9 @@ async function copyDir() {
   const targetDir = path.join(__dirname, 'files-copy');
 
   try {
+    //remove target directory if it exists
+    await fs.rm(targetDir, { recursive: true, force: true });
+
     //create target directory
     await fs.mkdir(targetDir, { recursive: true });
 
