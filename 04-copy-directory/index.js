@@ -23,10 +23,7 @@ async function copyDir() {
         await fs.copyFile(sourcePath, targetPath);
       }
     }
-      
-
-    
-
+    console.log('Files copied successfully');
   } catch (error) {
     console.error('Error copying directory:', error);
   }
