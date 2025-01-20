@@ -8,6 +8,10 @@ async function copyDir() {
   try {
     //create target directory
     await fs.mkdir(targetDir, { recursive: true });
+
+
+  } catch (error) {
+    console.error('Error copying directory:', error);
   }
 }
 
